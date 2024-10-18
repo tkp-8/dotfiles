@@ -17,8 +17,8 @@ config.window_background_opacity = 0.95
 config.macos_window_background_blur = 10
 
 -- Changing the default program: wsl
-config.default_prog = { "wsl.exe", "--distribution", "ubuntu", "--cd", "~", "../linuxbrew/.linuxbrew/bin/tmux" }
-
+config.default_prog = { "wsl.exe", "--distribution", "ubuntu", "--cd", "~" }
+-- , "../linuxbrew/.linuxbrew/bin/tmux"
 config.window_frame = {
   inactive_titlebar_bg = "none",
   active_titlebar_bg = "none",
