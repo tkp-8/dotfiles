@@ -1,4 +1,4 @@
--- Pull in the wezterm API-
+-- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
 -- This will hold the configuration.
@@ -13,12 +13,12 @@ config.window_close_confirmation = 'NeverPrompt'
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = false
 
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.9
 config.macos_window_background_blur = 10
 
 -- Changing the default program: wsl
-config.default_prog = { "wsl.exe", "--distribution", "ubuntu", "--cd", "~" }
--- , "../linuxbrew/.linuxbrew/bin/tmux"
+config.default_prog = { "wsl.exe", "--distribution", "ubuntu", "--cd", "~", "../linuxbrew/.linuxbrew/bin/tmux" }
+
 config.window_frame = {
   inactive_titlebar_bg = "none",
   active_titlebar_bg = "none",

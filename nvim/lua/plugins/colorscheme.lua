@@ -11,7 +11,8 @@ return {
 		config = function()
 			require("solarized-osaka").setup({
 				styles = {
-					floats = "transparent"
+					floats = "transparent",
+					sidebars = "transparent",
 				},
 			})
 		end,
