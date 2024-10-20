@@ -1,3 +1,6 @@
-require("tkp8.core")
-require("tkp8.lazy")
+if vim.loader then
+	vim.loader.enable()
+end
 
+
+require("config.lazy")
