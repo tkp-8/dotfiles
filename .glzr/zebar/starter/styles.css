@@ -34,7 +34,7 @@ body,
 }
 
 #root {
-  background: linear-gradient(rgb(0 0 0 / 90%), rgb(5 2 20 / 85%));
+  background: transparent;
 }
 
 .app {
@@ -44,7 +44,7 @@ body,
   height: 100%;
   font-family: CaskaydiaCove Nerd Font SemiBold, monospace;
   padding: 5px 8px;
-  background: #0a1624;
+  background: #0a1624d3;
   border: 2px solid #a3c8c9;
   border-radius: 13px;
 }
@@ -109,9 +109,9 @@ body,
 
   &.focused,
   &:hover {
-    background: yellow;
-    color: black;
-    border: 1px solid red;
+    background: #c9445b;
+    color: #a3c8c9;
+    border: 1px solid #a3c8c9;
   }
 }
 
@@ -139,7 +139,7 @@ body,
 }
 
 .red {
-  color: #ff4500;
+  color: #c9445b;
 }
 
 .green {
@@ -147,16 +147,16 @@ body,
 }
 
 .cpu {
-  color: #1e90ff;
+  color: #c9445b;
 }
 
 .cpu .high-usage {
-  color: #900029;
+  color: #c9445b;
   animation: flash 0.5s infinite;
 }
 
 .memory {
-  color: violet;
+  color: #c9445b;
 }
 
 .memory .high-usage {
@@ -182,9 +182,9 @@ body,
 }
 
 .uptime {
-  color: yellow;
+  color: #c9445b;
 }
 
 .weather {
-  color: yellow;
+  color: #c9445b;
 }
