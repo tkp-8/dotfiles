@@ -1,0 +1,14 @@
+[2m2024-10-16T07:27:03.701586Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-10-16T08:27:07.265405Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-10-16T08:29:03.589310Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-10-16T08:29:34.329395Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-10-16T09:13:34.365050Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-10-16T09:38:37.996900Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to start watcher process.
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+[2m2024-10-16T09:39:08.087975Z[0m [31mERROR[0m [2mglazewm::common::commands::shell_exec[0m[2m:[0m [3merr_message[0m[2m=[0m"Failed to execute 'zebar'.\n\nError: The operation was canceled by the user. (0x800704C7)"
+[2m2024-10-16T09:42:46.693390Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to start watcher process.
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
