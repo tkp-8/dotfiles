@@ -1,5 +1,8 @@
 return {
 	{
+		"evesdropper/luasnip-latex-snippets.nvim",
+	},
+	{
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	{
@@ -9,7 +12,8 @@ return {
 			"rafamadriz/friendly-snippets",
 		},
 		config = function()
-			require("luasnip.loaders.from_lua").load()
+			require("luasnip").config.setup({ enable_autosnippets = true })
+			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip/" })
 		end,
 	},
 	{
@@ -25,20 +29,20 @@ return {
 						require("luasnip").lsp_expand(args.body)
 					end,
 				},
-			    mapping = {
-					['<CR>'] = cmp.mapping(function(fallback)
-							if cmp.visible() then
-								if luasnip.expandable() then
-									luasnip.expand()
-								else
-									cmp.confirm({
-										select = true,
-									})
-								end
+				mapping = {
+					["<CR>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							if luasnip.expandable() then
+								luasnip.expand()
 							else
-								fallback()
+								cmp.confirm({
+									select = true,
+								})
 							end
-						end),
+						else
+							fallback()
+						end
+					end),
 
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
@@ -59,7 +63,7 @@ return {
 							fallback()
 						end
 					end, { "i", "s" }),
-				},	
+				},
 				window = {
 					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
