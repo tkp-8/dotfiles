@@ -1,8 +1,5 @@
 return {
 	{
-		"evesdropper/luasnip-latex-snippets.nvim",
-	},
-	{
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	{
@@ -17,13 +14,18 @@ return {
 		end,
 	},
 	{
+		"evesdropper/luasnip-latex-snippets.nvim",
+	},
+	{
 		"hrsh7th/nvim-cmp",
 		config = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 			require("luasnip.loaders.from_vscode").lazy_load()
-
 			cmp.setup({
+				completion = {
+					keyword_length = 2,
+				},
 				snippet = {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)

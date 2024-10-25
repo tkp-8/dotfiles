@@ -52,7 +52,7 @@ return {
 			opts.presets.lsp_doc_border = true
 		end,
 	},
-	
+
 	-- buffer line
 	{
 		"akinsho/bufferline.nvim",

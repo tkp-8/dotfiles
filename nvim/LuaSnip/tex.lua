@@ -26,13 +26,13 @@ local parse = require("luasnip.util.parser").parse_snippet
 local ms = ls.multi_snippet
 local autosnippet = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
 
--- [
--- personal imports
--- ]
+ls.add_snippets({ "alpha", {
+	s("@a", t("\\Alpha")),
+} })
+
 local tex = require("luasnip-latex-snippets.luasnippets.tex.utils.conditions")
 local line_begin = require("luasnip.extras.conditions.expand").line_begin
 
--- Generating functions for Matrix/Cases - thanks L3MON4D3!
 local generate_matrix = function(args, snip)
 	local rows = tonumber(snip.captures[2])
 	local cols = tonumber(snip.captures[3])
@@ -54,28 +54,40 @@ local generate_matrix = function(args, snip)
 end
 
 M = {
-    -- Matrices
-    autosnippet({trig = "([bBpvV])mat(%d+)x(%d+)([ar])", name = "[bBpvV]matrix", dscr = "matrices", regTrig = true, hidden = true},
-	fmta([[
+	-- Matrices
+	autosnippet(
+		{
+			trig = "([bBpvV])mat(%d+)x(%d+)([ar])",
+			name = "[bBpvV]matrix",
+			dscr = "matrices",
+			regTrig = true,
+			hidden = true,
+		},
+		fmta(
+			[[
     \begin{<>}<>
     <>
     \end{<>}]],
-	{f(function(_, snip)
-        return snip.captures[1] .. "matrix"
-    end),
-    f(function(_, snip)
-        if snip.captures[4] == "a" then
-            out = string.rep("c", tonumber(snip.captures[3]) - 1)
-            return "[" .. out .. "|c]"
-        end
-        return ""
-    end),
-    d(1, generate_matrix),
-    f(function(_, snip)
-        return snip.captures[1] .. "matrix"
-    end)
-    }),
-	{ condition = tex.in_math, show_condition = tex.in_math }),
+			{
+				f(function(_, snip)
+					return snip.captures[1] .. "matrix"
+				end),
+				f(function(_, snip)
+					if snip.captures[4] == "a" then
+						out = string.rep("c", tonumber(snip.captures[3]) - 1)
+						return "[" .. out .. "|c]"
+					end
+					return ""
+				end),
+				d(1, generate_matrix),
+				f(function(_, snip)
+					return snip.captures[1] .. "matrix"
+				end),
+			}
+		),
+		{ condition = tex.in_math, show_condition = tex.in_math }
+	),
 }
 
 return M
+
