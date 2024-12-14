@@ -18,14 +18,19 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"tailwind-tools",
+			"onsails/lspkind-nvim",
+		},
 		config = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 			require("luasnip.loaders.from_vscode").lazy_load()
+
 			cmp.setup({
-				completion = {
-					keyword_length = 2,
-				},
+				--completion = {
+				--	keyword_length = 2,
+				--},
 				snippet = {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)
@@ -75,6 +80,7 @@ return {
 					{ name = "luasnip" }, -- For luasnip users.
 				}, {
 					{ name = "buffer" },
+					{ name = "tailwindcss" },
 				}),
 			})
 		end,

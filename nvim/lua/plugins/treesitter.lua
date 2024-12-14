@@ -5,16 +5,14 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
 			ensure_installed = {
-				"cmake",
-				"cpp",
 				"css",
 				"gitignore",
-				"go",
-				"http",
-				"java",
 				"php",
-				"scss",
 				"sql",
+				"jsx",
+				"lua",
+				"html",
+				"json",
 			},
 
 			-- matchup = {
